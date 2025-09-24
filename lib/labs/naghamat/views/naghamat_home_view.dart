@@ -5,6 +5,20 @@ class NaghamatHomeView extends StatelessWidget {
   static const String routeName = '/naghamat-home';
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        title: const Text(
+          'Naghamat',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            height: 1,
+          ),
+        ),
+        backgroundColor: Colors.purple,
+      ),
+    );
   }
 }
