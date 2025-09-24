@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:naghamat/labs/naghamat/views/widgets/naghamat_home_view_body.dart';
 
 class NaghamatHomeView extends StatelessWidget {
@@ -8,17 +9,19 @@ class NaghamatHomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: NaghamatHomeViewBody(),
-      // Stack(
-      //   children: [
-      //     // SizedBox(
-      //     //   height: double.infinity,
-      //     //   width: double.infinity,
-      //     //   // child: Image.asset('', fit: BoxFit.cover),
-      //     // ),
-      //     const NaghamatHomeViewBody(),
-      //   ],
-      // ),
+      body: Stack(
+        children: [
+          SizedBox(
+            height: double.infinity,
+            width: double.infinity,
+            child: SvgPicture.asset(
+              'assets/images/musicBackground.svg',
+              fit: BoxFit.cover,
+            ),
+          ),
+          const NaghamatHomeViewBody(),
+        ],
+      ),
     );
   }
 }
