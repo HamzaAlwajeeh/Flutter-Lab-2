@@ -1,8 +1,9 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
 class CustomIconButton extends StatefulWidget {
-  const CustomIconButton({super.key});
-
+  const CustomIconButton({super.key, required this.musicNumber});
+  final String musicNumber;
   @override
   State<CustomIconButton> createState() => _CustomIconButtonState();
 }
@@ -28,7 +29,11 @@ class _CustomIconButtonState extends State<CustomIconButton> {
           ),
         ),
         child: IconButton(
-          onPressed: () {
+          onPressed: () async {
+            final player = AudioPlayer();
+            await player.play(
+              AssetSource('music/music-${widget.musicNumber}.mp3'),
+            );
             setState(() {
               isPlaying = !isPlaying;
             });

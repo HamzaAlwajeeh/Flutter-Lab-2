@@ -35,7 +35,7 @@ class MusicItemButton extends StatelessWidget {
           const SizedBox(width: 18),
           MusicTitle(text: musicName),
           const Spacer(),
-          CustomIconButton(),
+          CustomIconButton(musicNumber: musicNumber),
         ],
       ),
     );
