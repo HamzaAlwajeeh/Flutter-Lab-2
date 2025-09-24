@@ -22,7 +22,24 @@ class NaghamatHomeViewBody extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-          MusicItemButton(musicName: 'Hamza Galaxy', musicNumber: '1'),
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                MusicItemButton(musicName: 'Sony Xperia', musicNumber: '1'),
+                MusicItemButton(musicName: 'Vivo X90', musicNumber: '2'),
+                MusicItemButton(musicName: 'Hwawei Mate 40', musicNumber: '3'),
+                MusicItemButton(musicName: 'Oppo Reno 8', musicNumber: '4'),
+                MusicItemButton(musicName: 'Nokia', musicNumber: '5'),
+                MusicItemButton(musicName: 'Samsung Galaxy ', musicNumber: '6'),
+                MusicItemButton(
+                  musicName: 'Iphone 17 Pro Max',
+                  musicNumber: '7',
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );

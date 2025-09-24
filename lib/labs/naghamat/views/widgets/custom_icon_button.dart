@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
-class customIconButton extends StatelessWidget {
-  const customIconButton({super.key});
+class CustomIconButton extends StatefulWidget {
+  const CustomIconButton({super.key});
 
+  @override
+  State<CustomIconButton> createState() => _CustomIconButtonState();
+}
+
+class _CustomIconButtonState extends State<CustomIconButton> {
+  bool isPlaying = false;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,8 +28,16 @@ class customIconButton extends StatelessWidget {
           ),
         ),
         child: IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.play_arrow, color: Colors.white, size: 30),
+          onPressed: () {
+            setState(() {
+              isPlaying = !isPlaying;
+            });
+          },
+          icon: Icon(
+            isPlaying ? Icons.pause : Icons.play_arrow,
+            color: Colors.white,
+            size: 30,
+          ),
         ),
       ),
     );

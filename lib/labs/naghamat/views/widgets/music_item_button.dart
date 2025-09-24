@@ -32,10 +32,10 @@ class MusicItemButton extends StatelessWidget {
         children: [
           SizedBox(width: 6),
           CustomMusicImage(),
-          const SizedBox(width: 15),
+          const SizedBox(width: 18),
           MusicTitle(text: musicName),
           const Spacer(),
-          customIconButton(),
+          CustomIconButton(),
         ],
       ),
     );
