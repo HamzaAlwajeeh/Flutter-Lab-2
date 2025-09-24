@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:naghamat/labs/naghamat/views/widgets/custom_icon_button.dart';
 import 'package:naghamat/labs/naghamat/views/widgets/custom_music_image.dart';
+import 'package:naghamat/labs/naghamat/views/widgets/music_title.dart';
 
 class NaghamatHomeViewBody extends StatelessWidget {
   const NaghamatHomeViewBody({super.key});
@@ -54,37 +56,9 @@ class MusicItemButton extends StatelessWidget {
           SizedBox(width: 6),
           CustomMusicImage(),
           const SizedBox(width: 15),
-          Text(
-            'Samsung Galaxy',
-            style: TextStyle(
-              color: Colors.purple.shade50,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          MusicTitle(),
           const Spacer(),
-          Padding(
-            padding: const EdgeInsets.only(right: 12),
-            child: Container(
-              width: 45,
-              height: 45,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50),
-                gradient: LinearGradient(
-                  colors: [
-                    Colors.purple.withOpacity(0.5),
-                    Colors.blue.withOpacity(0.5),
-                  ],
-                  begin: Alignment.centerLeft,
-                  end: Alignment.topRight,
-                ),
-              ),
-              child: IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.play_arrow, color: Colors.white, size: 30),
-              ),
-            ),
-          ),
+          customIconButton(),
         ],
       ),
     );
