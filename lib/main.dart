@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:naghamat/core/on_generate_route.dart';
+import 'package:naghamat/core/router/on_generate_route.dart';
 import 'package:naghamat/labs/naghamat/views/naghamat_home_view.dart';
 
 void main() {

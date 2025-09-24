@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:naghamat/labs/naghamat/views/widgets/naghamat_home_view_body.dart';
 
 class NaghamatHomeView extends StatelessWidget {
   const NaghamatHomeView({super.key});
@@ -6,19 +7,18 @@ class NaghamatHomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        centerTitle: true,
-        title: const Text(
-          'Naghamat',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            height: 1,
-          ),
-        ),
-        backgroundColor: Colors.purple,
-      ),
+      resizeToAvoidBottomInset: false,
+      body: NaghamatHomeViewBody(),
+      // Stack(
+      //   children: [
+      //     // SizedBox(
+      //     //   height: double.infinity,
+      //     //   width: double.infinity,
+      //     //   // child: Image.asset('', fit: BoxFit.cover),
+      //     // ),
+      //     const NaghamatHomeViewBody(),
+      //   ],
+      // ),
     );
   }
 }
