@@ -15,14 +15,14 @@ class MusicItemButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 70,
+      height: 80,
       decoration: BoxDecoration(
         border: Border.all(color: Colors.purple.shade50, width: 1),
         borderRadius: BorderRadius.circular(16),
         gradient: LinearGradient(
           colors: [
-            Colors.purple.withOpacity(0.5),
-            Colors.blue.withOpacity(0.5),
+            Colors.purple.withOpacity(0.9),
+            Colors.blue.withOpacity(0.8),
           ],
           begin: Alignment.centerLeft,
           end: Alignment.topRight,

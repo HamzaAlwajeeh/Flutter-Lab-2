@@ -15,8 +15,8 @@ class _CustomIconButtonState extends State<CustomIconButton> {
     return Padding(
       padding: const EdgeInsets.only(right: 12),
       child: Container(
-        width: 45,
-        height: 45,
+        width: 50,
+        height: 50,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
           gradient: LinearGradient(

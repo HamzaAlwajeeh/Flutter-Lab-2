@@ -11,7 +11,7 @@ class NaghamatHomeViewBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const SizedBox(height: 20),
+          const SizedBox(height: 40),
           Text(
             'Naghamat',
             style: TextStyle(
