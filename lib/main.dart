@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: 'Qatar'),
+      theme: ThemeData(fontFamily: 'Poppins'),
       title: 'Labs',
       onGenerateRoute: onGenerateRoute,
       initialRoute: FutureBuilderHomeView.routeName,

@@ -21,7 +21,7 @@ class ContactItem extends StatelessWidget {
           text,
           style: TextStyle(
             fontSize: 16,
-            fontWeight: FontWeight.w700,
+            fontWeight: FontWeight.w500,
             color: AppColors.primary,
           ),
         ),
