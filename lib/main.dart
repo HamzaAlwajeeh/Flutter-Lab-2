@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:naghamat/core/helper/service_loactor.dart';
 import 'package:naghamat/core/router/on_generate_route.dart';
-import 'package:naghamat/labs/naghamat/views/naghamat_home_view.dart';
+import 'package:naghamat/labs/FutureBuilder/view/future_builder_home_view.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(fontFamily: 'Qatar'),
       title: 'Labs',
       onGenerateRoute: onGenerateRoute,
-      initialRoute: NaghamatHomeView.routeName,
+      initialRoute: FutureBuilderHomeView.routeName,
     );
   }
 }
