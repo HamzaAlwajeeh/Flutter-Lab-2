@@ -18,7 +18,10 @@ class _FutureBuilderHomeViewState extends State<FutureBuilderHomeView> {
       appBar: AppBar(
         title: const Text(
           'FutureBuilder',
-          style: TextStyle(color: AppColors.primary),
+          style: TextStyle(
+            color: AppColors.primary,
+            fontWeight: FontWeight.w600,
+          ),
         ),
         centerTitle: true,
         backgroundColor: AppColors.scaffoldBackground,
@@ -27,14 +30,14 @@ class _FutureBuilderHomeViewState extends State<FutureBuilderHomeView> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           FutureBuilderHomeViewBody(),
-          const SizedBox(height: 20),
+          const SizedBox(height: 16),
           ElevatedButton(
             onPressed: () {
               setState(() {});
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: AppColors.primary,
-              minimumSize: Size(308, 56),
+              minimumSize: Size(308, 50),
             ),
             child: const Text(
               'Refresh',
