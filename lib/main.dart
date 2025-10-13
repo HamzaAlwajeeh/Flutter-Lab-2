@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:naghamat/core/helper/service_loactor.dart';
 import 'package:naghamat/core/router/on_generate_route.dart';
-import 'package:naghamat/labs/LearningSqlLite/views/test_db.dart';
+import 'package:naghamat/labs/SQL/views/sql_home_view.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(fontFamily: 'Poppins'),
       title: 'Labs',
       onGenerateRoute: onGenerateRoute,
-      initialRoute: TestDb.routeName,
+      initialRoute: SqlHomeView.routeName,
     );
   }
 }
