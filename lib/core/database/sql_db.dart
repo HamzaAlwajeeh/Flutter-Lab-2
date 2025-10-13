@@ -20,7 +20,7 @@ class SqlDb {
     Database myDb = await openDatabase(
       path,
       onCreate: _onCreate,
-      version: 1,
+      version: 2,
       onUpgrade: _onUpgrade,
     );
     return myDb;
@@ -28,13 +28,9 @@ class SqlDb {
 
   _onCreate(Database db, int version) async {
     await db.execute('''
-  CREATE TABLE "contacts" (
+  CREATE TABLE "notes" (
   "id"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-  "name"	TEXT NOT NULL,
-  "age"	INTEGER NOT NULL,
-  "gender"	TEXT NOT NULL,
-  "phone"	TEXT,
-  "email"	TEXT,
+  "title"	TEXT NOT NULL
 );
   ''');
     log('Database and Tables Created Successfully');
