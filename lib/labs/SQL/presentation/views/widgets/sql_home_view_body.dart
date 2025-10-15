@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:naghamat/labs/SQL/views/widgets/contacts_list_view_builder.dart';
-import 'package:naghamat/labs/SQL/views/widgets/custom_app_bart.dart';
+import 'package:naghamat/labs/SQL/presentation/views/widgets/contacts_list_view_builder.dart';
+import 'package:naghamat/labs/SQL/presentation/views/widgets/custom_app_bart.dart';
 
 class SqlHomeViewBody extends StatelessWidget {
   const SqlHomeViewBody({super.key});

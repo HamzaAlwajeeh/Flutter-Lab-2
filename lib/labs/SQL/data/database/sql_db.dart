@@ -48,19 +48,19 @@ class SqlDb {
     return response;
   }
 
-  insertData(String sql) async {
+  insertData({required String sql}) async {
     Database myDb = await db;
     int response = await myDb.rawInsert(sql);
     return response;
   }
 
-  updateData(String sql) async {
+  updateData({required String sql}) async {
     Database myDb = await db;
     int response = await myDb.rawUpdate(sql);
     return response;
   }
 
-  deleteData(String sql) async {
+  deleteData({required String sql}) async {
     Database myDb = await db;
     int response = await myDb.rawDelete(sql);
     return response;

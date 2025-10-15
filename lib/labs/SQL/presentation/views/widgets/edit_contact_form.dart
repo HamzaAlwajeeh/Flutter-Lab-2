@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:naghamat/labs/SQL/views/widgets/custom_text_form_feild.dart';
-import 'package:naghamat/labs/SQL/views/widgets/primary_button.dart';
+import 'package:naghamat/labs/SQL/presentation/views/widgets/custom_text_form_feild.dart';
+import 'package:naghamat/labs/SQL/presentation/views/widgets/primary_button.dart';
 
 class EditContactForm extends StatefulWidget {
   const EditContactForm({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:naghamat/core/constants/constants.dart';
-import 'package:naghamat/labs/SQL/views/widgets/custom_edit_app_bar.dart';
-import 'package:naghamat/labs/SQL/views/widgets/edit_contact_form.dart';
+import 'package:naghamat/labs/SQL/presentation/views/widgets/custom_edit_app_bar.dart';
+import 'package:naghamat/labs/SQL/presentation/views/widgets/edit_contact_form.dart';
 
 class EditContactView extends StatefulWidget {
   const EditContactView({super.key});

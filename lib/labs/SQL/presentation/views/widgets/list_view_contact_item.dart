@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:naghamat/core/constants/constants.dart';
-import 'package:naghamat/labs/SQL/views/edit_contact_view.dart';
+import 'package:naghamat/labs/SQL/presentation/views/edit_contact_view.dart';
 
 class ListViewContactItem extends StatelessWidget {
   const ListViewContactItem({super.key});

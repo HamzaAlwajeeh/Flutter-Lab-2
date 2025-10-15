@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:naghamat/labs/FutureBuilder/view/future_builder_home_view.dart';
 import 'package:naghamat/labs/LearningSqlLite/views/test_db.dart';
-import 'package:naghamat/labs/SQL/views/edit_contact_view.dart';
-import 'package:naghamat/labs/SQL/views/sql_home_view.dart';
+import 'package:naghamat/labs/SQL/presentation/views/edit_contact_view.dart';
+import 'package:naghamat/labs/SQL/presentation/views/sql_home_view.dart';
 import 'package:naghamat/labs/naghamat/views/naghamat_home_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {

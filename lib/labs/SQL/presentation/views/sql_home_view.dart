@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:naghamat/core/constants/constants.dart';
-import 'package:naghamat/labs/SQL/views/widgets/add_contact_form.dart';
-import 'package:naghamat/labs/SQL/views/widgets/sql_home_view_body.dart';
+import 'package:naghamat/labs/SQL/presentation/views/widgets/add_contact_form.dart';
+import 'package:naghamat/labs/SQL/presentation/views/widgets/sql_home_view_body.dart';
 
 class SqlHomeView extends StatelessWidget {
   const SqlHomeView({super.key});

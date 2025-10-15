@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:naghamat/labs/SQL/views/widgets/list_view_contact_item.dart';
+import 'package:naghamat/labs/SQL/presentation/views/widgets/list_view_contact_item.dart';
 
 class ContactsListViewBuilder extends StatelessWidget {
   const ContactsListViewBuilder({super.key});
