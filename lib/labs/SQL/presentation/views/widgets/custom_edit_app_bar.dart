@@ -26,19 +26,25 @@ class CustomEditAppBar extends StatelessWidget {
             color: AppColors.textPrimaryColor,
           ),
         ),
-        IconButton(
-          onPressed: () {},
-          icon: Container(
-            height: 40,
-            width: 40,
-            decoration: BoxDecoration(
-              color: AppColors.primary.withOpacity(0.1),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: const Icon(
-              Icons.check,
-              color: AppColors.textPrimaryColor,
-              size: 30,
+        Visibility(
+          visible: false,
+          maintainAnimation: true,
+          maintainState: true,
+          maintainSize: true,
+          child: IconButton(
+            onPressed: () {},
+            icon: Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                color: AppColors.primary.withOpacity(0.1),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: const Icon(
+                Icons.check,
+                color: AppColors.textPrimaryColor,
+                size: 30,
+              ),
             ),
           ),
         ),

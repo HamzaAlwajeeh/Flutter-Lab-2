@@ -7,10 +7,12 @@ class CustomTextFormFeild extends StatefulWidget {
     required this.hintText,
     required this.keyboardType,
     this.onChanged,
+    this.initValue,
   });
   final String hintText;
   final TextInputType keyboardType;
   final void Function(String)? onChanged;
+  final String? initValue;
 
   @override
   State<CustomTextFormFeild> createState() => _CustomTextFormFeildState();
@@ -20,6 +22,7 @@ class _CustomTextFormFeildState extends State<CustomTextFormFeild> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      initialValue: widget.initValue,
       onChanged: widget.onChanged,
       validator: (value) {
         if (value == null || value.isEmpty) {

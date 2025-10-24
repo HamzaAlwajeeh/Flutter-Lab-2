@@ -20,7 +20,7 @@ class SqlDb {
     Database myDb = await openDatabase(
       path,
       onCreate: _onCreate,
-      version: 2,
+      version: 5,
       onUpgrade: _onUpgrade,
     );
     return myDb;
@@ -29,38 +29,40 @@ class SqlDb {
   _onCreate(Database db, int version) async {
     await db.execute('''
   CREATE TABLE "contacts" (
-  "id"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-  "name"	TEXT NOT NULL,
-  "age"	INTEGER NOT NULL,
-  "phone"	TEXT NOT NULL,
+  "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  "name" TEXT NOT NULL,
+  "phone"	TEXT NOT NULL
 );
   ''');
     log('Database and Tables Created Successfully');
   }
 
-  _onUpgrade(Database db, int oldVersion, int newVersion) {
+  _onUpgrade(Database db, int oldVersion, int newVersion) async {
     log('Database Upgrade from $oldVersion to $newVersion');
+
+    await db.execute('DROP TABLE IF EXISTS contacts');
+    await _onCreate(db, newVersion);
   }
 
-  readData(String sql) async {
+  Future<List<Map<String, dynamic>>> readData(String sql) async {
     Database myDb = await db;
-    List<Map> response = await myDb.rawQuery(sql);
+    List<Map<String, dynamic>> response = await myDb.rawQuery(sql);
     return response;
   }
 
-  insertData({required String sql}) async {
+  Future<int> insertData({required String sql}) async {
     Database myDb = await db;
     int response = await myDb.rawInsert(sql);
     return response;
   }
 
-  updateData({required String sql}) async {
+  Future<int> updateData({required String sql}) async {
     Database myDb = await db;
     int response = await myDb.rawUpdate(sql);
     return response;
   }
 
-  deleteData({required String sql}) async {
+  Future<int> deleteData({required String sql}) async {
     Database myDb = await db;
     int response = await myDb.rawDelete(sql);
     return response;

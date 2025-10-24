@@ -29,7 +29,9 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   audioplayers: ^6.5.1
+  bloc: ^9.1.0
   cupertino_icons: ^1.0.8
+  delightful_toast: ^1.1.0
   flutter:
     sdk: flutter
   flutter_svg: ^2.2.1

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:naghamat/core/constants/constants.dart';
+import 'package:naghamat/labs/SQL/data/repos/home_repo_impl.dart';
+import 'package:naghamat/labs/SQL/presentation/views/sql_home_view.dart';
 import 'package:naghamat/labs/SQL/presentation/views/widgets/custom_text_form_feild.dart';
+import 'package:naghamat/labs/SQL/presentation/views/widgets/custom_toast_bar.dart';
 import 'package:naghamat/labs/SQL/presentation/views/widgets/primary_button.dart';
 
 class AddContactForm extends StatefulWidget {
@@ -49,13 +52,6 @@ class _AddContactFormState extends State<AddContactForm> {
                     },
                   ),
                   CustomTextFormFeild(
-                    hintText: 'Age',
-                    keyboardType: TextInputType.number,
-                    onChanged: (value) {
-                      age = int.tryParse(value);
-                    },
-                  ),
-                  CustomTextFormFeild(
                     hintText: 'Phone',
                     keyboardType: TextInputType.text,
                     onChanged: (value) {
@@ -64,10 +60,25 @@ class _AddContactFormState extends State<AddContactForm> {
                   ),
                   PrimaryButton(
                     text: 'Add',
-                    onPressed: () {
+                    onPressed: () async {
                       if (formKey.currentState!.validate()) {
                         autovalidateMode = AutovalidateMode.disabled;
+                        await HomeRepoImpl().addNewContact(
+                          query: '''
+                            INSERT INTO contacts (name, phone) 
+                            VALUES ('$name','$phone'); 
+                          ''',
+                        );
                         setState(() {});
+                        Navigator.pushReplacementNamed(
+                          context,
+                          SqlHomeView.routeName,
+                        );
+                        customToastBar(
+                          message: 'Contact added successfully',
+                          icon: Icons.check,
+                          context: context,
+                        );
                       } else {
                         autovalidateMode = AutovalidateMode.always;
                         setState(() {});

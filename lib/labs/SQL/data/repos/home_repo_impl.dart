@@ -9,18 +9,16 @@ class HomeRepoImpl implements HomeRepo {
 
   @override
   Future<List<ContactModel>> getAllContacts() async {
-    var response = db.readData('SELECT * FROM contacts');
-
-    List<Map<String, dynamic>> data = response as List<Map<String, dynamic>>;
-    List<ContactModel> contacts = [];
-    for (var contact in data) {
-      contacts.add(ContactModel.fromMap(contact));
-    }
+    var response = await db.readData('SELECT * FROM contacts');
+    // response is List<Map<String, dynamic>>; convert to List<ContactModel>
+    List<ContactModel> contacts = response
+        .map<ContactModel>((json) => ContactModel.fromMap(json))
+        .toList(growable: false);
     return contacts;
   }
 
   @override
-  Future addNewContact(String query) async {
+  Future addNewContact({required String query}) async {
     var response = await db.insertData(sql: query);
     if (response > 0) {
       log('Contact Added Successfully');
@@ -30,7 +28,7 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future deleteContact(String query) async {
+  Future deleteContact({required String query}) async {
     var response = await db.deleteData(sql: query);
     if (response > 0) {
       log('Contact Deleted Successfully');
@@ -40,7 +38,7 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future updateContact(String query) async {
+  Future updateContact({required String query}) async {
     var response = await db.updateData(sql: query);
     if (response > 0) {
       log('Contact Update Successfully');

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:naghamat/core/constants/constants.dart';
+import 'package:naghamat/labs/SQL/data/models/contact_model.dart';
 import 'package:naghamat/labs/SQL/presentation/views/widgets/custom_edit_app_bar.dart';
 import 'package:naghamat/labs/SQL/presentation/views/widgets/edit_contact_form.dart';
 
 class EditContactView extends StatefulWidget {
-  const EditContactView({super.key});
+  const EditContactView({super.key, required this.contact});
   static const String routeName = '/edit-contact';
-
+  final ContactModel contact;
   @override
   State<EditContactView> createState() => _EditContactViewState();
 }
@@ -22,7 +23,9 @@ class _EditContactViewState extends State<EditContactView> {
         child: Column(
           children: [
             CustomEditAppBar(),
-            SingleChildScrollView(child: EditContactForm()),
+            SingleChildScrollView(
+              child: EditContactForm(contact: widget.contact),
+            ),
           ],
         ),
       ),
