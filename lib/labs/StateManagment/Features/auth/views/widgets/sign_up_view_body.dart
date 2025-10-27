@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:naghamat/core/constants/constants.dart';
 import 'package:naghamat/labs/StateManagment/Features/auth/views/login_view.dart';
 import 'package:naghamat/labs/StateManagment/Features/auth/views/widgets/custom_text_form_feild.dart';
 import 'package:naghamat/labs/StateManagment/Features/auth/views/widgets/have_an_account.dart';
@@ -28,8 +29,12 @@ class _LoginViewBodyState extends State<SignUpViewBody> {
           children: [
             const SizedBox(height: 70),
             Text(
-              'إنشاء حساب جديد',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              'SIGNUP',
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                color: AppColors.primary,
+              ),
             ),
             const SizedBox(height: 70),
             SvgPicture.asset('assets/images/signup.svg'),
@@ -40,7 +45,7 @@ class _LoginViewBodyState extends State<SignUpViewBody> {
                 children: [
                   const SizedBox(height: 50),
                   CustomTextFormFeild(
-                    hintText: 'اسم المستخدم',
+                    hintText: 'UserName',
                     keyboardType: TextInputType.text,
                     onChanged: (value) {
                       userName = value;
@@ -48,7 +53,7 @@ class _LoginViewBodyState extends State<SignUpViewBody> {
                   ),
                   const SizedBox(height: 20),
                   CustomTextFormFeild(
-                    hintText: 'البريد الإلكتروني',
+                    hintText: 'Email',
                     keyboardType: TextInputType.emailAddress,
                     onChanged: (value) {
                       email = value;
@@ -56,7 +61,7 @@ class _LoginViewBodyState extends State<SignUpViewBody> {
                   ),
                   const SizedBox(height: 20),
                   CustomTextFormFeild(
-                    hintText: 'كلمة المرور',
+                    hintText: 'Password',
                     keyboardType: TextInputType.visiblePassword,
                     isPassword: true,
                     onChanged: (value) {
@@ -65,15 +70,15 @@ class _LoginViewBodyState extends State<SignUpViewBody> {
                   ),
                   const SizedBox(height: 20),
                   PrimaryButton(
-                    text: 'تسجيل الدخول',
+                    text: 'Sign Up',
                     onPressed: () {
-                      onLoginButtonPressed();
+                      onSignUpButtonPressed();
                     },
                   ),
                   const SizedBox(height: 20),
                   HaveAnAccount(
-                    subText: 'تمتلك حساب بالفعل؟',
-                    primaryText: 'تسجيل الدخول',
+                    subText: 'Already have an account?',
+                    primaryText: 'Login',
                     onTap: () {
                       Navigator.pushReplacementNamed(
                         context,
@@ -91,7 +96,7 @@ class _LoginViewBodyState extends State<SignUpViewBody> {
     );
   }
 
-  void onLoginButtonPressed() {
+  void onSignUpButtonPressed() {
     if (formKey.currentState!.validate()) {
       formKey.currentState!.save();
       autovalidateMode = AutovalidateMode.disabled;

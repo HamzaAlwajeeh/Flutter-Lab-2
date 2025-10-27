@@ -16,7 +16,10 @@ class HaveAnAccount extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text('$subText ', style: TextStyle(fontSize: 16)),
+        Text(
+          '$subText ',
+          style: TextStyle(fontSize: 16, color: AppColors.textPrimaryColor),
+        ),
         GestureDetector(
           onTap: onTap,
           child: Text(

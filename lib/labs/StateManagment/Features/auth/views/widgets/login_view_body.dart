@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:naghamat/core/constants/constants.dart';
 import 'package:naghamat/labs/SQL/presentation/views/widgets/primary_button.dart';
 import 'package:naghamat/labs/StateManagment/Features/auth/views/sign_up_view.dart';
 import 'package:naghamat/labs/StateManagment/Features/auth/views/widgets/custom_text_form_feild.dart';
@@ -26,7 +27,14 @@ class _LoginViewBodyState extends State<LoginViewBody> {
         child: Column(
           children: [
             const SizedBox(height: 70),
-            Text('تسجيل الدخول', style: TextStyle(fontSize: 18)),
+            Text(
+              'LOGIN',
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                color: AppColors.primary,
+              ),
+            ),
             const SizedBox(height: 70),
             SvgPicture.asset('assets/images/login.svg'),
             Form(
@@ -36,7 +44,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 children: [
                   const SizedBox(height: 50),
                   CustomTextFormFeild(
-                    hintText: 'البريد الإلكتروني',
+                    hintText: 'Email',
                     keyboardType: TextInputType.emailAddress,
                     onChanged: (value) {
                       email = value;
@@ -44,7 +52,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   ),
                   const SizedBox(height: 20),
                   CustomTextFormFeild(
-                    hintText: 'كلمة المرور',
+                    hintText: 'Password',
                     keyboardType: TextInputType.visiblePassword,
                     isPassword: true,
                     onChanged: (value) {
@@ -53,15 +61,15 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   ),
                   const SizedBox(height: 20),
                   PrimaryButton(
-                    text: 'تسجيل الدخول',
+                    text: 'Login',
                     onPressed: () {
                       onLoginButtonPressed();
                     },
                   ),
                   const SizedBox(height: 20),
                   HaveAnAccount(
-                    subText: 'لا تمتلك حساب؟',
-                    primaryText: 'إنشاء حساب',
+                    subText: 'Don\'t have an account?',
+                    primaryText: 'Sign Up',
                     onTap: () {
                       Navigator.pushReplacementNamed(
                         context,

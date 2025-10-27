@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:naghamat/core/constants/constants.dart';
 import 'package:naghamat/core/helper/service_loactor.dart';
 import 'package:naghamat/core/router/on_generate_route.dart';
-import 'package:naghamat/labs/SQL/presentation/views/sql_home_view.dart';
+import 'package:naghamat/labs/StateManagment/Features/auth/views/login_view.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       ),
       title: 'Labs',
       onGenerateRoute: onGenerateRoute,
-      initialRoute: SqlHomeView.routeName,
+      initialRoute: LoginView.routeName,
     );
   }
 }

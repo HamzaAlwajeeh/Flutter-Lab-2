@@ -74,7 +74,7 @@ class _CustomTextFormFeildState extends State<CustomTextFormFeild> {
         hintStyle: TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.bold,
-          color: AppColors.primary,
+          color: AppColors.primary.withOpacity(0.5),
         ),
         fillColor: AppColors.textFeilsSecondary,
         border: buildBorder(),
