@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:naghamat/core/constants/constants.dart';
-import 'package:naghamat/labs/StateManagment/Features/auth/providers/auth_provider.dart';
 import 'package:naghamat/labs/StateManagment/Features/auth/views/login_view.dart';
-import 'package:provider/provider.dart';
 
 class LoggedOutDrawer extends StatelessWidget {
   const LoggedOutDrawer({super.key});
