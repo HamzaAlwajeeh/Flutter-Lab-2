@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:naghamat/core/constants/constants.dart';
 import 'package:naghamat/labs/SQL/presentation/views/widgets/primary_button.dart';
+import 'package:naghamat/labs/StateManagment/Features/auth/providers/auth_provider.dart';
 import 'package:naghamat/labs/StateManagment/Features/auth/views/sign_up_view.dart';
 import 'package:naghamat/labs/StateManagment/Features/auth/views/widgets/custom_text_form_feild.dart';
 import 'package:naghamat/labs/StateManagment/Features/auth/views/widgets/have_an_account.dart';
+import 'package:naghamat/labs/StateManagment/Features/home/views/state_managment_home_view.dart';
+import 'package:provider/provider.dart';
 
 class LoginViewBody extends StatefulWidget {
   const LoginViewBody({super.key});
@@ -90,6 +93,8 @@ class _LoginViewBodyState extends State<LoginViewBody> {
     if (formKey.currentState!.validate()) {
       formKey.currentState!.save();
       autovalidateMode = AutovalidateMode.disabled;
+      Provider.of<AuthProvider>(context , listen: false).login();
+      Navigator.pushReplacementNamed(context, StateManagmentHomeView.routeName);
       setState(() {});
     } else {
       autovalidateMode = AutovalidateMode.always;

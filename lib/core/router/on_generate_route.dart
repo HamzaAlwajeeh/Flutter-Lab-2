@@ -6,6 +6,7 @@ import 'package:naghamat/labs/SQL/presentation/views/edit_contact_view.dart';
 import 'package:naghamat/labs/SQL/presentation/views/sql_home_view.dart';
 import 'package:naghamat/labs/StateManagment/Features/auth/views/login_view.dart';
 import 'package:naghamat/labs/StateManagment/Features/auth/views/sign_up_view.dart';
+import 'package:naghamat/labs/StateManagment/Features/home/views/state_managment_home_view.dart';
 import 'package:naghamat/labs/naghamat/views/naghamat_home_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
@@ -29,6 +30,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => const LoginView());
     case SignUpView.routeName:
       return MaterialPageRoute(builder: (context) => const SignUpView());
+    case StateManagmentHomeView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const StateManagmentHomeView(),
+      );
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());
   }

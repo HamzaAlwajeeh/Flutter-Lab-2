@@ -26,14 +26,14 @@ class _CustomTextFormFeildState extends State<CustomTextFormFeild> {
       onChanged: widget.onChanged,
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'هذا الحقل مطلوب';
+          return 'This Field is required';
         }
-        if (widget.hintText == 'البريد الإلكتروني' &&
+        if (widget.hintText == 'Email' &&
             !RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(value)) {
-          return 'الرجاء إدخال بريد إلكتروني صالح';
+          return 'Must Use a real Email';
         }
         if (widget.isPassword == true && value.length < 8) {
-          return 'يجب أن تكون كلمة المرور 8 أحرف على الأقل';
+          return 'must be geater than 8 digits';
         }
         return null;
       },
